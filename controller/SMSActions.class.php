@@ -12,11 +12,11 @@ class SMSActions {
 		static::sendMessage($_POST['phone'], $_POST['message']);
 	}
 
-	private static setProperties() {
+	private static function setProperties() {
 		static::$sid = Config::get(Config::TWILIO_SID);
 		static::$token = Config::get(Config::TWILIO_TOKEN);
 		static::$phoneNumber = Config::get(Config::TWILIO_NUMBER);
-		static::$client = new Twilio\Rest\Client($sid, $token);
+		static::$client = new Twilio\Rest\Client(static::$sid, static::$token);
 	}
 
 	private static function sendMessage($to, $message) {

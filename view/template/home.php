@@ -17,7 +17,7 @@
 				</div>
 				<div class="phone">
 					<label for="phone">Phone Number</label>
-					<input type="text" name="phone"/>
+					<input type="text" name="phone" id="phone"/>
 				</div>
 				<div class="message">
 					<label for="message">Message</label>
