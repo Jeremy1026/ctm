@@ -9,7 +9,7 @@
 		Fill in the form below to recieve a text message!
 	</div>
 	<div class="form">
-		<form id="textForm">
+		<form id="textForm" action="/sendSMS">
 			<div class="inputWrap">
 				<div class="name">
 					<label for="name">Name</label>
