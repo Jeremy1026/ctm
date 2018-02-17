@@ -4,7 +4,7 @@ DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 
 if [ ! -e "$DIR/data/config.php" ]; then
-  cp "$DIR/data/config.php.example" "$DIR/data/config.php"
+  cp "$DIR/data/config.example.php" "$DIR/data/config.php"
 fi
 
 docker run --rm -it --name "ctm.dev" \
