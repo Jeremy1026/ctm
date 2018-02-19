@@ -9,7 +9,11 @@ class SMSActions {
 
 	public static function executeSend() {
 		static::setProperties();
-		static::sendMessage($_POST['phone'], $_POST['message']);
+		static::sendMessage($_POST['phone'], $_POST['message'], $_POST['name']);
+	}
+
+	public static function executeReceive() {
+		static::saveMessage(false, $_REQUEST['From'], $_REQUEST['Body'], null);
 	}
 
 	private static function setProperties() {
@@ -19,7 +23,7 @@ class SMSActions {
 		static::$client = new Twilio\Rest\Client(static::$sid, static::$token);
 	}
 
-	private static function sendMessage($to, $message) {
+	private static function sendMessage($to, $message, $name) {
 		static::$client->messages->create(
 		    $to,
 		    array(
@@ -28,6 +32,27 @@ class SMSActions {
 		    )
 		);
 
+		static::saveMessage(true, null, $to, $message, $name);
 	}
 
+	public static function saveMessage($isSent, $to = null, $from = null, $message = null, $name = null) {
+		$db = new Database();
+
+		$isSending = ($isSent) ? 1 : 0;
+		if ($to !== null) {
+			$number = $to;
+		}
+		elseif ($from !== null) {
+			$number = $from;
+		}
+		else {
+			throw new Exception("To or From must be set to save the message.", 1);
+		}
+
+		$insert = $db->query("INSERT INTO messages(`isSent`, `number`, `message`, `sender_name`) 
+									VALUES (:isSending, :number, :message, :name)", array("isSending" =>$isSending, 
+																						  "number"	  =>$number, 
+																						  "message"	  =>$message,
+																						  "name"	  =>$name));
+	}
 }

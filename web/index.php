@@ -23,10 +23,10 @@ if (!IS_PRODUCTION)
   }, E_WARNING|E_CORE_WARNING|E_COMPILE_WARNING|E_USER_WARNING);
 }
 
-
 $router = new Pux\Mux;
 $router->any('/', ['HomeActions','executeHome']);
 $router->post('/sendSMS', ['SMSActions','executeSend']);
+$router->post('/receiveSMS', ['SMSActions','executeReceive']);
 
 $router->any('/404', ['HomeActions','executePageNotFound']);
 
