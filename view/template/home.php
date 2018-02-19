@@ -8,6 +8,7 @@
 	<div class="instructions animated fadeIn">
 		Fill in the form below to recieve a text message!
 	</div>
+	<div class="errorMessage"></div>
 	<div class="form">
 		<form id="textForm" action="/sendSMS">
 			<div class="inputWrap">
