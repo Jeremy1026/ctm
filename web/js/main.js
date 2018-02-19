@@ -5,11 +5,9 @@ $(document).ready(function() {
 	    url = $(this).attr('action');
 
 	    if (isPhoneNumberValid($('#phone').val())) {
-	    	console.log("PASS");
 	    	sendSMS(url, postData);
 	    }
 	    else {
-	    	console.log("FAIL");
 	    }
 		
 
