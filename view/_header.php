@@ -12,7 +12,7 @@
 							'Jeremy Curcio' ?>
 	<title><?php echo $title ?></title>
 
-    <link href="/css/styles.min.css" rel="stylesheet" type="text/css" />
+    <link href="/assets/css/styles.min.css" rel="stylesheet" type="text/css" />
 	<script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>  
 
 	<meta name="description" content="<?php echo Response::getMetaDescription() ?>">

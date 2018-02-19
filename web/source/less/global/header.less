@@ -1,0 +1,123 @@
+header#global-header {
+	width: 100%;
+	max-width: 100%;
+	border-bottom: 4px @secondary-light solid;
+	position: fixed;
+	top: 0;
+	color: @primary-light;
+	background-color: @primary-dark;
+	height: 40px;
+	z-index: 999;
+
+	.navbar {
+
+		&.navbar-default {
+			background-color: transparent;
+			.menu-header-menu-container {
+				width: 100%;
+				ul#menu-header-menu.menu {
+					display: inline;
+					float: right;
+					li {
+						display: inline;
+						margin: 0 15px;
+						&.current-menu-item {
+							padding-left: 2px;
+							border-top: 2px @secondary-light solid;
+
+							a {
+								background-color: transparent;
+							}
+						}
+						a {
+							.bold;
+							text-transform: uppercase;
+							letter-spacing: .1em;
+							color: #fff;
+							transition: background-color 0.5s ease, color 0.5s ease;
+							&:hover {
+								color: @primary-light;
+							}
+						}
+					}
+				}				
+			}
+		}
+
+		.navbar-toggle.collapsed {
+			border: none;
+
+		}
+		.navbar-toggle:hover {
+			background-color: #fff;
+		}
+		.collapse, .collapsing {
+			border: none;
+		}
+		.font-primary;
+		transition: all 0.4s ease;
+		background: transparent;
+		border: none;
+		padding-top: 7px;
+		padding-bottom: 8px;
+		&.sticky, &.white {
+			margin-top: -1px;
+			background: #fff;
+			border-radius: 0;
+			ul#menu-main-menu {
+				li {
+					.semi-bold;
+					&:last-child:after {
+					    border-left: 1px solid @secondary-dark;
+					}
+					a {
+						.bold;
+						text-transform: uppercase;
+						letter-spacing: .1em;
+						color: @secondary-dark;
+					    transition: background-color 0.5s ease, color 0.5s ease;
+						&:hover {
+							color: @primary-light;
+						}		
+					}
+				}
+			}
+		}
+
+		.navbar-header {
+
+		}
+
+		.navbar-collapse {
+			padding: 0px;
+		}
+		
+
+		&:not(.sticky) social.side-bar {
+			position: absolute;
+			right: 0;
+			top: 0;
+		}
+		&.sticky social.side-bar {
+			position: absolute;
+			transform: translatey(8px);
+			// top: 65px;
+			right: 0;
+		}
+	}
+}
+
+
+/* Small Devices, Tablets */
+
+@media (max-width: 992px) { 
+
+}
+
+@media (max-width : 768px) {
+
+}
+
+@media (max-width : 480px) {
+
+}
