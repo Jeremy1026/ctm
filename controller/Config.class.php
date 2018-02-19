@@ -8,6 +8,10 @@ class Config
 	const TWILIO_SID = "twilio_sid";
 	const TWILIO_NUMBER = "twilio_number";
 	const TWILIO_TOKEN = "twilio_token";
+	const DB_HOST = "database_host";
+	const DB_USER = "database_user";
+	const DB_PASSWORD = "database_password";
+	const DB_NAME = "database_name";
 
 	protected static $loaded = false;
 	protected static $data = [];
