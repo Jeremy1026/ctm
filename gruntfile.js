@@ -62,7 +62,7 @@ module.exports = function(grunt) {
                 },
                 dist: {
                     src: javascript.all,
-                    dest: assets + "scripts.js",
+                    dest: assets + "/js/scripts.js",
                 },
             },
 
@@ -74,7 +74,7 @@ module.exports = function(grunt) {
                 my_target: {
                     files: (function() {
                         var files = {};
-                        files[assets + "scripts.min.js"] = [assets + "scripts.js"];
+                        files[assets + "/js/scripts.min.js"] = [assets + "/js/scripts.js"];
                         return files;
                     })()
                 }

@@ -4,19 +4,22 @@ $(document).ready(function() {
 		var postData = $(this).serialize();
 	    url = $(this).attr('action');
 
+	    if (($('#name').val() === '') || ($('#phone') === '') || ($('#message') === '')) {
+	    	console.log("misisng data");
+	    	return;
+	    }
+
 	    if (isPhoneNumberValid($('#phone').val())) {
 	    	sendSMS(url, postData);
 	    }
 	    else {
+	    	console.log("Phone number invalid");
 	    }
-		
-
-		e.preventDefault();
 	});
 });
 
 function isPhoneNumberValid(phoneNumber) {
-	var phoneRegex = /^\+?([0-9]{2})\)?[-. ]?([0-9]{4})[-. ]?([0-9]{4})$/;
+	var phoneRegex = /^\(?([2-9][0-8][0-9])\)?[-.●]?([2-9][0-9]{2})[-.●]?([0-9]{4})$/
 	if (phoneNumber.match(phoneRegex)) {
 		return true;
 	}
@@ -26,6 +29,7 @@ function isPhoneNumberValid(phoneNumber) {
 }
 
 function sendSMS(url, data) {
+	console.log("SEND");
 	$.ajax({
             type: "post",
             url: url,

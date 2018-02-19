@@ -4,6 +4,7 @@
 
 $(document).ready(function() {
 	$('#textForm').submit(function(e) {
+		console.log("hello?");
 		e.preventDefault();
 		var postData = $(this).serialize();
 	    url = $(this).attr('action');

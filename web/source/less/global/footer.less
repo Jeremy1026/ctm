@@ -11,8 +11,8 @@ body {
     margin-bottom: 80px;
 }
 .sticky-footer {
-    background-color: @secondary-light;
-    color: @secondary-dark;
+    background-color: @primary;
+    color: @secondary;
 
     // position: absolute;
     // bottom: 0;
@@ -32,8 +32,8 @@ body {
     text-align: center;
 
     .middle {
-        border-left: 1px @primary-dark solid;
-        border-right: 1px @primary-dark solid;
+        border-left: 1px @secondary solid;
+        border-right: 1px @secondary solid;
         margin: 0 0 10px 0;
     }
     .right {
@@ -41,18 +41,16 @@ body {
         .separator {
             width: 50%;
             margin: 5px auto;
-            border: 1px @primary-dark solid;
+            border: 1px @secondary solid;
         }
     }
 
     a {
         .extra-bold;
-        color: @primary-light;
+        color: @primary;
         text-transform: uppercase;
         transition: background-color 0.5s ease, color 0.5s ease;
         &:hover {
-            // color: @light-blue;
-            // background-color: @light-gray !important;
         }
     }
     ul#menu-footer-left-menu {
@@ -62,12 +60,12 @@ body {
             padding: 0;
             margin: 0;
             a {
-                color: @secondary-dark;
+                color: @secondary;
                 letter-spacing: .12em;
                 .extra-bold;
                 transition: background-color 0.5s ease, color 0.5s ease;
                 &:hover {
-                    background-color: @primary-light !important;
+                    background-color: @primary !important;
                 }
             }
         }
@@ -83,7 +81,7 @@ body {
         .nopadding {
         }
         .middle {
-            border: solid @primary-dark;
+            border: solid @secondary;
             border-width: 2px 0px 2px 0px;
             padding: 30px 0;
         }

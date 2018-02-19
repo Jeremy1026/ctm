@@ -1,0 +1,65 @@
+main.home {
+	#content {
+		text-align: center;
+		.instructions {
+			font-size: 2em;
+			.bold;
+			padding: 20px;
+		}
+		.form {
+			.inputWrap {
+				div {
+					padding: 10px;
+					label {
+						margin: 0 auto;
+						padding: 10px 0;
+						max-width: 250px;
+						.semi-bold;
+						border-top: 1px solid @quarternary;
+						border-bottom: 1px solid @quarternary;
+						display: block;
+					}
+					input {
+						margin-top: 20px;
+						width: 250px;
+						&[type="submit"] {
+							width: 80px;
+							background: @tertiary;
+							color: @primary;
+							border-radius: 15px 50px;
+							border: 1px solid rgba(0, 0, 0, 0);
+							height: 40px;
+						}
+					}
+				}
+			}
+		}
+	}
+// 	<div id="content">
+// 	<div class="instructions">
+// 		Fill in the form below to recieve a text message!
+// 	</div>
+// 	<div class="form">
+// 		<form id="textForm" action="/sendSMS">
+// 			<div class="inputWrap">
+// 				<div class="name">
+// 					<label for="name">Name</label>
+// 					<input type="text" name="name"/>
+// 				</div>
+// 				<div class="phone">
+// 					<label for="phone">Phone Number</label>
+// 					<input type="text" name="phone" id="phone"/>
+// 				</div>
+// 				<div class="message">
+// 					<label for="message">Message</label>
+// 					<input type="text" name="message"/>
+// 				</div>
+// 				<div class="submit">
+// 					<input type="submit" name="send" value="Send"/>
+// 				</div>
+// 			</div>
+// 		</form>
+// 	</div>
+// </div>
+
+}
