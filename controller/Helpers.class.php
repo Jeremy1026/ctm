@@ -12,12 +12,12 @@ class Helpers {
 	    return true;
 	}
 
-	public static function templateExists($template): bool {
+	public static function templateExists($template) {
 		return is_readable(static::getTemplatePath($template));
 	}
 
 
-	private static function getTemplatePath($template): string {
+	private static function getTemplatePath($template) {
 	    return ROOT_DIR . '/view/template/' . $template . '.php';
 	}
 

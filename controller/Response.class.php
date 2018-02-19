@@ -139,7 +139,7 @@ class Response
     static::$content = $content;
   }
 
-  public static function getContent(): string
+  public static function getContent()
   {
     return static::$content;
   }
@@ -159,7 +159,7 @@ class Response
     static::$contentSent = true;
   }
 
-  public static function setIsHeadersOnly(bool $isHeadersOnly = true)
+  public static function setIsHeadersOnly($isHeadersOnly = true)
   {
     static::$isHeadersOnly = $isHeadersOnly;
   }
@@ -185,7 +185,7 @@ class Response
     static::setHeader(static::HEADER_ETAG, md5(static::getContent()));
   }
 
-  public static function enableHttpCache(int $seconds = 300)
+  public static function enableHttpCache($seconds = 300)
   {
     static::addCacheControlHeader('max-age', $seconds);
     static::setHeader('Pragma', 'public');
@@ -200,7 +200,7 @@ class Response
       foreach (preg_split('/\s*,\s*/', $cacheControl) as $tmp)
       {
         $tmp                     = explode('=', $tmp);
-        $currentHeaders[$tmp[0]] = $tmp[1] ?? null;
+        $currentHeaders[$tmp[0]] = $tmp[1] ? $tmp[1] : null;
       }
     }
     $currentHeaders[strtr(strtolower($name), '_', '-')] = $value;
@@ -232,10 +232,10 @@ class Response
 
   public static function getHeader($name, $default = null)
   {
-    return static::$headers[$name] ?? $default;
+    return static::$headers[$name] ? static::$headers[$name] : $default;
   }
 
-  public static function getHeaders(): array
+  public static function getHeaders()
   {
     return static::$headers;
   }
@@ -346,10 +346,10 @@ class Response
       '505' => 'HTTP Version Not Supported',
     ];
 
-    return $statusTexts[$code] ?? null;
+    return $statusTexts[$code] ? $statusTexts[$code] : null;
   }
 
-  protected static function normalizeHeaderName($name): string
+  protected static function normalizeHeaderName($name)
   {
     return preg_replace_callback(
       '/\-(.)/',
